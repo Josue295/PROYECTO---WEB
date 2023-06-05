@@ -1,0 +1,351 @@
+#title{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#subtitle{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#txt{
+    font-family: 'Quicksand', sans-serif !important;
+    font-size: 20px;
+}
+
+.contenedor{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color:gainsboro;
+    padding: 10px;;
+}
+
+.contenedor2{
+    position: fixed;
+    bottom: 4px;
+    right: 4px;
+    background-color:rgb(80, 80, 80);
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#icon{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
+
+nav{
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    
+}
+
+#div_menu-icon{
+    background-color: rgba(255, 255, 255, 0);
+    width: 30px;
+    height: 60px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#div_nav-logo{
+    background-color: rgba(255, 255, 255, 0);
+    width: 100px;
+    height: 90px;
+    margin: 0 auto;
+}
+
+#div_logo{
+    display: flex;
+    justify-content: center;
+}
+
+#logo{
+    height: 90px;
+    width: 90px;
+}
+
+#menu_icon{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+}
+
+#txt_nav_div{
+
+    background-color: rgb(0, 0, 0);
+    width: 65px;
+    height: 60px;
+    margin-left: 0px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+
+}
+
+#txt_nav{
+    margin: 0 auto;
+    color: rgb(255, 255, 255);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    margin-top: -1px;
+}
+
+#buscador{
+    width: 80px;
+    height: 20px;
+    background-color: black;
+}
+
+#bienv{
+    background-image: url("/assets/img/fondo.jpg");
+    background-repeat: repeat;
+    height: 800px;
+    background-size: 100%;
+    width: 100%;
+    font-size: 130px;
+    color: rgba(255, 255, 255, 0.827);
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 13px;
+    
+}
+
+.contenedor_div2{
+    height: 800px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subtitulo{
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.div_sub{
+    font-size: 50px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+#cont_cards{
+
+    width: 100%;
+    height: 600px;
+    margin-top: -110px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-bottom: -100px;
+}
+
+#cards{
+    height: 400px;
+    width: 300px;
+    margin-top: -80px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    transition: 300ms;
+}
+
+#cards:hover{
+    box-shadow: 0px 0px 35px #000000;
+}
+
+#cont_foto1{
+
+    margin-top: 25px;
+    width: 250px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0);/* 
+    background-image: url(/assets/img/mic1.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+
+}
+
+#mic{
+    width: 250px;
+    height: 150px;
+}
+
+#cont_foto2{
+
+    margin-top: 25px;
+    width: 250px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(/assets/img/tecla.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+
+}
+
+
+#cont_foto3{
+
+    margin-top: 25px;
+    width: 250px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(/assets/img/guitar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+
+}
+
+
+.cont_nosotros{
+    height: 800px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.cont_1nos{
+    height: 700px;
+    width: 600px;
+    background-color: rgb(103, 95, 95);
+}
+
+.cont_2nos{
+    height: 700px;
+    width: 850px;
+    background-color: white;
+}
+
+footer{
+    background-color: black;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#div_footer1{
+    background-color: rgba(255, 255, 255, 0);
+    height: 90px;
+    width: 550px;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#div_footer1_logo{
+    background-color: rgba(0, 0, 0, 0);
+    height: 90px;
+    width: 90px;
+}
+
+#div_footer2_copy{
+
+    background-color: rgba(0, 0, 0, 0);
+    height: 90px;
+    width: 400px;
+    margin-left: 10px;
+    display:flex;
+    align-items: center;
+
+}
+
+#txt_footer{
+    color: rgb(255, 253, 253);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#div_redes{
+    background-color: rgba(255, 255, 255, 0);
+    width: 200px;
+    height: 90px;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#div_ig{
+    background: rgba(255, 255, 255, 0);
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    border-radius: 30%;
+}
+
+
+#div_ig:hover{
+    background: linear-gradient(90deg, rgba(11,21,136,1) 0%, rgba(16,43,240,1) 19%, rgba(139,52,185,1) 35%, rgba(172,64,93,1) 58%, rgba(209,115,6,1) 94%);
+
+}
+
+
+#div_wpp{
+    background-color: rgba(255, 255, 255, 0);
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    border-radius: 30%;
+}
+
+#div_wpp:hover{
+    background: linear-gradient(90deg, rgba(23,129,34,1) 5%, rgba(24,115,44,1) 94%);
+    
+}
+
+#div_mail{
+    background: rgba(119, 48, 48, 0);
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30%;
+}
+
+#div_mail:hover{
+    background: linear-gradient(90deg, rgba(98,157,190,1) 5%, rgba(78,125,154,1) 94%);
+}
+
+#footer_icon{
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
