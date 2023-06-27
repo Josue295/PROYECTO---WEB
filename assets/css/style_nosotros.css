@@ -1,0 +1,41 @@
+.cont_div1_nosotros{
+    height: 900px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 150px;
+}
+
+
+.cont_div1{
+    height: 700px;
+    width: 100%;
+    background-color: rgba(250, 235, 215, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.title_div1{
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+}
+
+.title_txt{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 80px;
+    font-weight: 300;
+    color: black;
+}
+
+.article_prod{
+    height: 800px;
+    width: 1000px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    color: black;
+    margin-top: 40px;
+}

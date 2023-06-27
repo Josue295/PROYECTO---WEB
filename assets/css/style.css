@@ -4,45 +4,7 @@ a:link, a:visited,  a:hover, a:active
     text-decoration: none;
 }
 
-.loader{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    transition: opacity 0.75s, visibility 0.75s;
-}
 
-.loader-hidden{
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-.loader::after{
-    content: "";
-    width: 75px;
-    height: 75px;
-    border: 15px solid white;
-    border-top-color: gray;
-    border-radius: 50%;
-    animation: loading 0.75s ease-infinite;
-}
-
-
-@keyframes loading{
-
-    from{
-        transform: rotate(0turn);
-    }
-    to{
-        transform: rotate(1turn);
-    }
-}
 
 #title{
     font-family: 'Quicksand', sans-serif;
@@ -122,6 +84,17 @@ nav{
     align-items: center;
 }
 
+#div_menu-icon2{
+    background-color: rgba(255, 255, 255, 0);
+    width: 30px;
+    height: 60px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+
 #div_nav-logo{
     background-color: rgba(255, 255, 255, 0);
     width: 100px;
@@ -132,8 +105,14 @@ nav{
 #div_logo{
     display: flex;
     justify-content: center;
+    margin-right: 60px;
 }
 
+#div_logo2{
+    display: flex;
+    justify-content: center;
+    margin-right: 0px;
+}
 #logo{
     height: 90px;
     width: 90px;
@@ -143,6 +122,20 @@ nav{
     color: rgb(255, 255, 255);
     font-size: 30px;
 }
+
+#menu_icon:hover{
+    color: gray;
+}
+
+
+#icon:hover{
+    color: gray;
+}
+
+#icon_lg:hover{
+    color: gray;
+}
+ 
 
 #txt_nav_div{
 
@@ -439,6 +432,7 @@ nav{
     font-size: 30px;
     color: rgb(0, 0, 0);
     font-family: 'Josefin Sans', sans-serif;
+    
 }
 
 footer{
