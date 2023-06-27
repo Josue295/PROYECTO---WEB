@@ -1,3 +1,49 @@
+a:link, a:visited,  a:hover, a:active
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid white;
+    border-top-color: gray;
+    border-radius: 50%;
+    animation: loading 0.75s ease-infinite;
+}
+
+
+@keyframes loading{
+
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
 #title{
     font-family: 'Quicksand', sans-serif;
     font-size: 50px;
@@ -48,6 +94,11 @@
     color: rgb(255, 255, 255);
 }
 
+#icon_lg{
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    
+}
 
 nav{
     position: fixed;
@@ -156,7 +207,7 @@ nav{
 .div_sub{
     font-size: 50px;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 
@@ -182,8 +233,9 @@ nav{
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 20px;
-    transition: 300ms;
+    transition: 300ms; 
 }
+
 
 #cards:hover{
     box-shadow: 0px 0px 35px #000000;
@@ -236,7 +288,6 @@ nav{
 }
 
 .txt_info_prod{
-    
     font-size: 15px;
     font-family: 'Quicksand', sans-serif;
     color: rgb(255, 255, 255);
@@ -297,8 +348,8 @@ nav{
 
 .more{
 
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     background-color: rgba(255, 255, 255, 0);
     display: flex;
     justify-content: center;
@@ -327,12 +378,15 @@ nav{
 }
 
 .cont_2nos{
-    height: 700px;
+    height: 500px;
     width: 850px;
-    background-color: white;
-    display: flex;
+    background-color: rgb(255, 255, 255);
+    display: flex; 
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-right: 40px;
+    border-radius: 1%;
 }
 
 .pregunta_div{
@@ -345,25 +399,29 @@ nav{
 }
 
 .about_me_div{
-    height: 650px;
-    width: 700px;
-    background-color: rgba(255, 0, 0, 0);
+    height: 300px;
+    width: 100%;
+    background-color: rgba(155, 155, 155, 0);
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .mas_about{
-    height: 100px;
+    height: 50px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 0, 0, 0);
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
 }
 
+
 .about_div_txt{
-    height: 300px;
-    width: 100%;
-    background-color: rgba(35, 144, 158, 0);
+    height: 280px;
+    width: 90%;
+    background-color: rgba(38, 0, 88, 0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -379,7 +437,7 @@ nav{
 
 #about_txt{
     font-size: 30px;
-    color: black;
+    color: rgb(0, 0, 0);
     font-family: 'Josefin Sans', sans-serif;
 }
 
