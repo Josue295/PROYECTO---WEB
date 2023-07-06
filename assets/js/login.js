@@ -40,7 +40,7 @@ document.addEventListener("click", (e) =>{
             agregar.className = "btn_form"
             agregar.innerHTML = `
 
-            <a href="shop.html">Modificar Tienda</a>
+            <a href="editshop.html">Modificar Tienda</a>
 
             
             `

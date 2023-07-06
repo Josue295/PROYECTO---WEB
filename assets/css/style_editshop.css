@@ -1,0 +1,141 @@
+.cont_edit{
+    background-color: rgba(0, 255, 255, 0);
+    width: 100%;
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cont_form{
+    background-color: rgba(0, 255, 255, 0);
+    height: 650px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.title_edit{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 200;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.formEdit{
+    background-color: rgb(0, 0, 0);
+    height: 600px;
+    width: 40%;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    display:flex;
+    justify-content: center;
+    border-radius: 50px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.form_delete{
+    background-color: rgb(0, 0, 0);
+    height: 200px;
+    width: 65%;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: 160px;
+   
+}
+
+.div_id{
+    background-color: rgba(0, 255, 255, 0);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.div_name{
+    background-color: rgba(0, 255, 51, 0);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_price{
+    background-color: rgba(255, 0, 195, 0);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_cant{
+    background-color: rgba(255, 81, 0, 0);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input{
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 1%;
+    background-color: gray;
+    margin-left: 20px;
+}
+
+form label{
+    font-size: 20px;
+}
+
+#subir{
+    outline: 0;
+    border: 0;
+    background-color: bisque;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 250px;
+    padding: 5px;
+    transition: all .3 ease-in-out;
+    text-align: center;
+    color: black;
+    font-weight: 500;
+}
+
+#subir:hover{
+    opacity: .75;
+}
+
+#eliminar_btn{
+    outline: 0;
+    border: 0;
+    background-color: bisque;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 250px;
+    padding: 5px;
+    transition: all .3 ease-in-out;
+    text-align: center;
+    color: black;
+    font-weight: 500;
+}
+
+
+#eliminar_btn:hover{
+    opacity: .75;
+}

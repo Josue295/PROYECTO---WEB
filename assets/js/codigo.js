@@ -36,7 +36,7 @@ productos.forEach((product)=>{
     
     `;
 
-    shopContent.append(content)
+    shopContent.append(content);
 
     let comprar = document.createElement("button")
     comprar.className = "btn_agregar";
