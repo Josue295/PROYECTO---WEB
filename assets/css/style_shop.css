@@ -8,3 +8,117 @@
     height: 700px;
     background-color: white;
 }
+
+.cont_prod{
+    background-color: rgba(127, 255, 212, 0);
+    width: 100%;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    background-color: rgb(255, 255, 255);
+    max-width: 250px;
+    height: 350px;
+    width: 250px;
+    box-shadow: 2px 2px 10px 1px #010000;
+    border-radius: 20px;
+}
+
+.card-image{
+    width: 90%;
+    height: 170px;
+}
+
+.card-txt{
+    font-family: 'Quicksand', sans-serif;
+    margin-left: 20px;
+}
+
+.prod_nombre{
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.prod_precio{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.btn_agregar{
+    border: none;
+    margin-top: 20px;
+    margin-left: 15px;
+    color: white;
+    cursor:pointer;
+    width: 100px;
+    height: 30px;
+    background-color: gray;
+    border-radius: 20px;
+    transition: 500ms;
+}
+.btn_agregar:hover{
+    opacity: 0.7;
+}
+
+.modal-container{
+
+    font-family: 'Quicksand', sans-serif;
+    width: 80%;
+    margin: 0 10%;
+    max-height: 88vh;
+    color: white;
+    background-color: #010000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+    border-radius: 0px 0px 20px 20px;
+
+}
+
+.modal-container--webkit-scrollbar{
+    display: none;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+.modal-header-title{
+    justify-self: start;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.modal-header-btn{
+    cursor: pointer;
+}
+
+.modal-container > .modal-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px;
+}
+
+.total-content{
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+}
