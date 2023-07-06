@@ -122,3 +122,23 @@
     padding-top: 20px;
     margin-top: 20px;
 }
+
+.delete-product{
+    cursor: pointer;
+}
+
+.cant-carrito{
+    background-color: rgb(207, 31, 0);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right:14px;
+    position: absolute;
+    display: none;
+}
+
+.restar, .sumar{
+    cursor: pointer;
+}

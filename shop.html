@@ -46,11 +46,13 @@
     
 
     <div id="div_menu-icon2">
-      <a id="verCarrito">
-        <i class='bx bx-shopping-bag' id="icon"></i>
-      </a>
+
       <a href="./login.html">
-        <i class='bx bx-user' id="icon"></i>
+        <i class='bx bx-user' id="icon">
+        </i>
+      </a>
+      <a id="verCarrito">
+        <i class='bx bx-shopping-bag' id="icon"><span id="cantCarrito" class="cant-carrito"></span></i>
       </a>
     </div>
     
@@ -74,7 +76,7 @@
 
 
 
-    <footer>
+    <footer id="footer">
       
         <div id="div_footer1">
   
@@ -115,8 +117,10 @@
   
       </footer>
   
-  
+
+      
       <script src="./assets/js/products.js"></script>
+      <script src="./assets/js/carrito.js"></script>
       <script src="./assets/js/codigo.js"></script>
   
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
