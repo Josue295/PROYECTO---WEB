@@ -36,7 +36,7 @@ document.addEventListener("click", (e) =>{
         }else if($username.value == "admin_usuario" && $password.value == "admin2023"){
             $submit.style.display = "none";
             error.style.display = "none"
-            Toastify({
+            /* Toastify({
                 text: "Bienvenido Administrador!",
                 duration: 3000,
                 // destination: "https://google.com",
@@ -48,7 +48,23 @@ document.addEventListener("click", (e) =>{
                 style: {
                   background: "linear-gradient(to right, #00b09b, #96c93d)",                  
                 },
-              }).showToast();
+              }).showToast(); */
+              const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'success',
+                title: '¡Acceso exitoso!'
+              })
             let agregar = document.createElement("div")
             agregar.className = "btn_form"
             agregar.innerHTML = `

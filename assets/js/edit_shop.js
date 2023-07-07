@@ -22,7 +22,9 @@ productos.forEach((product)=>{
     content.className = "card"
     content.innerHTML = `
     
-        <div class="card-image"></div>
+
+        <div class="card-image"><img class="img_prod" src="${product.img}"></div>
+        
         <div class="card-txt">
             <h4 class="prod_nombre">${product.nombre}</h4>
             <p class="prod_precio">$${product.precio}</p>
@@ -41,13 +43,26 @@ console.log(aux);
 let id_cont = aux.length;
     
 class Producto {
-    constructor(id, nombre, precio, cantidad) {
+    constructor(id, nombre, precio, cantidad, img) {
     this.id = id
     this.nombre = nombre;
     this.precio = precio;
     this.cantidad = cantidad;
+    this.img = img;
     }
       }
+
+/* unction showPreview(event){
+    if(event.target.files.length > 0){
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("file_prod");
+        preview.src = src;
+        preview.style.display = "block";
+        }
+    console.log(preview.src);
+    return preview.src;
+
+} */
 
 const AddProducto = () => {
     id_cont++
@@ -55,7 +70,8 @@ const AddProducto = () => {
     let precio = parseInt(document.getElementById("price_prod").value);
     let cantidad = 1;
     let id = id_cont;
-    let productoNuevo = new Producto(id, nombre, precio, cantidad);
+    let img = document.getElementById("file_prod").value;
+    let productoNuevo = new Producto(id, nombre, precio, cantidad, img);
     productos.unshift(productoNuevo);
     Swal.fire({
         position: 'top-center',
@@ -89,6 +105,7 @@ const del_Prod = () => {
     // guarda el producto en el localStorage
     localStorage.setItem("productos", JSON.stringify(productos));
     console.log(productos)
+    window.location.href("#")
     return producto_eliminado;
 }
 

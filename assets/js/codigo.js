@@ -23,12 +23,14 @@ const cantCarrito = document.getElementById("cantCarrito")
 
 
 productos.forEach((product)=>{
+    
 
     let content = document.createElement("div")
+    console.log(product.img)
     content.className = "card"
     content.innerHTML = `
     
-        <div class="card-image"></div>
+        <div class="card-image"><img class="img_prod" src="${product.img}"></div>
         <div class="card-txt">
             <h4 class="prod_nombre">${product.nombre}</h4>
             <p class="prod_precio">$${product.precio}</p>
@@ -62,8 +64,18 @@ productos.forEach((product)=>{
             nombre: product.nombre,
             precio: product.precio,
             cantidad: product.cantidad,
+            img: product.img,
+            
         });
         }
+        Swal.fire({
+            title: '¡Producto agregado al carrito!',
+            text: product.nombre,
+            imageUrl: product.img,
+            imageWidth: 130,
+            imageHeight: 130,
+            imageAlt: 'Custom image',
+          })
         console.log(carrito);
         carritoCounter();
         saveLocal();

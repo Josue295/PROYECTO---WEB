@@ -66,7 +66,7 @@
     <div class="cont_edit1">
         <h1 class="title_edit">AGREGAR PRODUCTO</h1>
         <div class="cont_form">
-        <form action="" class="formEdit" id="form_edit">
+        <form action="" class="formEdit" id="form_edit" enctype="multipart/form-data" autocomplete="off">
 
             <div class="div_name">
             <label for="Name">Nombre del Producto:</label>
@@ -77,6 +77,12 @@
             <label for="Precio">Precio del Producto:</label>
             <input type="number" id="price_prod" required>
             </div>
+
+
+            <div class="div_img">
+              <label for="Imagen">Imagen del producto:</label>
+              <input type="text" id="file_prod" class="file_input" required>
+              </div>
 
             <button type="button" id="subir">Agregar Producto</button>
         </form>
