@@ -1,3 +1,6 @@
+
+localStorage.setItem("productos", JSON.stringify(productos));
+
 const $name = document.getElementById("name_prod"),
       $price = document.getElementById("price_prod"),
       $id = document.getElementById("ID_prod"),
@@ -9,6 +12,33 @@ let id_del = parseInt(document.getElementById("prod_del").value);
 let btn_add = document.getElementById("subir");
 let btn_del = document.getElementById("eliminar_btn");
 
+
+const shopContent_edit = document.getElementById("shop_content_edit")
+
+
+productos.forEach((product)=>{
+
+    let content = document.createElement("div")
+    content.className = "card"
+    content.innerHTML = `
+    
+        <div class="card-image"></div>
+        <div class="card-txt">
+            <h4 class="prod_nombre">${product.nombre}</h4>
+            <p class="prod_precio">$${product.precio}</p>
+            <p class="id_producto">ID: ${product.id}</p>
+        </div>
+    
+    `;
+
+    shopContent_edit.append(content);
+})
+
+let aux = JSON.parse(localStorage.getItem("productos"))
+console.log(aux);
+
+
+let id_cont = aux.length;
     
 class Producto {
     constructor(id, nombre, precio, cantidad) {
@@ -20,25 +50,26 @@ class Producto {
       }
 
 const AddProducto = () => {
-
-    /* let nombre = document.querySelector("#name_prod").value;
-    let cantidad = parseInt(document.querySelector("#cantidad_prod").value);
-    let precio = parseFloat(document.querySelector("#price_prod").value);
-    let id = parseInt(document.querySelector("#ID_prod").value) */
-    
-
+    id_cont++
     let nombre = document.getElementById("name_prod").value;
-    nombre = nombre.toUpperCase();
     let precio = parseInt(document.getElementById("price_prod").value);
-    let cantidad = parseInt(document.getElementById("cantidad_prod").value);
-    let id = parseInt(document.getElementById("ID_prod").value);
+    let cantidad = 1;
+    let id = id_cont;
     let productoNuevo = new Producto(id, nombre, precio, cantidad);
     productos.unshift(productoNuevo);
+    Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Producto agregado correctamente.',
+        showConfirmButton: false,
+        timer: 1500
+      })
   
     // guarda el producto en el localStorage
     localStorage.setItem("productos", JSON.stringify(productos));
     console.log(productos)
     return productoNuevo;
+
 }
 
 
@@ -48,6 +79,13 @@ const del_Prod = () => {
     productos = productos.filter((producto_eliminado) =>{
         return producto_eliminado !== found_Del;
     })
+    Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Producto eliminado correctamente.',
+        showConfirmButton: false,
+        timer: 1500
+      })
     // guarda el producto en el localStorage
     localStorage.setItem("productos", JSON.stringify(productos));
     console.log(productos)
@@ -59,4 +97,3 @@ btn_del.addEventListener(("click"), del_Prod);
 btn_add.addEventListener(("click"), AddProducto);
 
 
-localStorage.setItem("productos", JSON.stringify(productos));

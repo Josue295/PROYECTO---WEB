@@ -36,6 +36,19 @@ document.addEventListener("click", (e) =>{
         }else if($username.value == "admin_usuario" && $password.value == "admin2023"){
             $submit.style.display = "none";
             error.style.display = "none"
+            Toastify({
+                text: "Bienvenido Administrador!",
+                duration: 3000,
+                // destination: "https://google.com",
+                newWindow: true,
+                close: true,
+                gravity: "top", // "top" o "bottom"
+                position: "right", // "left", "center" o "right"
+                stopOnFocus: true, // Previene que se vaya si está el mouse encima
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",                  
+                },
+              }).showToast();
             let agregar = document.createElement("div")
             agregar.className = "btn_form"
             agregar.innerHTML = `
