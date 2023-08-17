@@ -63,6 +63,16 @@
 
 <body>
 
+  <div id="noAdmin">
+    <div class="noAdmin_cont">
+      <p>Debes iniciar sesion para editar la tienda</p>
+      <a href="login.html">
+      <button type="button" class="btn_inicio">INICIAR SESIÓN</button>
+    </a>
+    </div>
+  </div>
+
+  <div id="cont_hiddeable">
     <div class="cont_edit1">
         <h1 class="title_edit">AGREGAR PRODUCTO</h1>
         <div class="cont_form">
@@ -96,7 +106,10 @@
             <label for="ID">ID del Producto:</label>
             <input type="number" id="prod_del" required>
             </div>
+
+            <a href="editshop.html">
             <button type="button" id="eliminar_btn">Eliminar Producto</button>
+            </a>
         </form>
     </div>
 
@@ -109,6 +122,7 @@
       </div>
 
     </div>
+  </div>
 
 
 
@@ -153,13 +167,10 @@
         </div>
   
       </footer>
-  
-
-      
       <script src="./assets/js/products.js"></script>
       <script src="./assets/js/edit_shop.js"></script>
       <script src="./assets/js/carrito.js"></script>
-      <script src="./assets/js/codigo.js"></script>
+      <!-- <script src="./assets/js/codigo.js"></script> -->
 
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

@@ -1,3 +1,6 @@
+
+localStorage.setItem("statusUser", false);
+
 const NavEl = document.querySelector('.nav');
 
 window = addEventListener('scroll', () => {

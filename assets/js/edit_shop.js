@@ -1,4 +1,24 @@
 
+const vistaAdmin = document.getElementById("cont_hiddeable");
+const vistaUser = document.getElementById("noAdmin");
+
+
+let statusUser = localStorage.getItem("statusUser")
+
+const verifUser = () =>{
+
+    if(statusUser == "true"){
+        vistaAdmin.style.display = "flexbox";
+        noAdmin.style.display = "none";
+    }else{
+        vistaAdmin.style.display = "none";
+        noAdmin.style.display = "flexbox";
+    }
+
+}
+
+verifUser();
+
 localStorage.setItem("productos", JSON.stringify(productos));
 
 const $name = document.getElementById("name_prod"),
@@ -52,17 +72,6 @@ class Producto {
     }
       }
 
-/* unction showPreview(event){
-    if(event.target.files.length > 0){
-        var src = URL.createObjectURL(event.target.files[0]);
-        var preview = document.getElementById("file_prod");
-        preview.src = src;
-        preview.style.display = "block";
-        }
-    console.log(preview.src);
-    return preview.src;
-
-} */
 
 const AddProducto = () => {
     id_cont++
@@ -108,6 +117,7 @@ const del_Prod = () => {
     window.location.href("#")
     return producto_eliminado;
 }
+
 
 btn_del.addEventListener(("click"), del_Prod);
 

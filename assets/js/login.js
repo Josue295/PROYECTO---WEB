@@ -1,8 +1,14 @@
 const login = document.getElementById("login");
-const error = document.getElementById("error")
-const form = document.getElementById("form")
+const error = document.getElementById("error");
+const form = document.getElementById("form");
 
 let aux = 0;
+
+localStorage.setItem("statusUser", false);
+
+let statusUser = localStorage.getItem("statusUser")
+
+
 
 const $submit = document.getElementById("submit"),
       $password = document.getElementById("password"),
@@ -22,6 +28,7 @@ document.addEventListener("click", (e) =>{
     if(e.target === $submit){
         if($password.value !== "admin2023" && $username.value !== "admin_usuario"){
             let content = document.createElement("div")
+            
             content.className = "error_div"
             content.innerHTML = `
                            
@@ -36,19 +43,7 @@ document.addEventListener("click", (e) =>{
         }else if($username.value == "admin_usuario" && $password.value == "admin2023"){
             $submit.style.display = "none";
             error.style.display = "none"
-            /* Toastify({
-                text: "Bienvenido Administrador!",
-                duration: 3000,
-                // destination: "https://google.com",
-                newWindow: true,
-                close: true,
-                gravity: "top", // "top" o "bottom"
-                position: "right", // "left", "center" o "right"
-                stopOnFocus: true, // Previene que se vaya si está el mouse encima
-                style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",                  
-                },
-              }).showToast(); */
+            statusUser = true
               const Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -59,7 +54,7 @@ document.addEventListener("click", (e) =>{
                   toast.addEventListener('mouseenter', Swal.stopTimer)
                   toast.addEventListener('mouseleave', Swal.resumeTimer)
                 }
-              })
+                })
               
               Toast.fire({
                 icon: 'success',
@@ -76,5 +71,8 @@ document.addEventListener("click", (e) =>{
 
             form.append(agregar)
         }
+
+        localStorage.setItem("statusUser", statusUser)
     }
 })
+
