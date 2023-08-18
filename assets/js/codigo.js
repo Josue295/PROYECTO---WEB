@@ -36,6 +36,7 @@ productos.forEach((product)=>{
         <div class="card-image"><img class="img_prod" src="${product.img}"></div>
         <div class="card-txt">
             <h4 class="prod_nombre">${product.nombre}</h4>
+            <p class="prod_marca">${product.marca}</p>
             <p class="prod_precio">$${product.precio}</p>
         </div>
     

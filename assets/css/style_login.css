@@ -16,7 +16,7 @@ nav{
 .cont{
     background-image: url(/assets/img/fondo_login.jpg);
     background-size: cover;
-    height: 700px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@ nav{
 
 .login{
     height: 500px;
-    width: 30%;
+    width: 400px;
     background-color: black;
     border-radius: 20px;
     box-shadow: 0px 0px 30px #ffffff83;
@@ -34,6 +34,7 @@ nav{
     justify-content: center;
     
     font-family: 'Quicksand', sans-serif;
+
 }
 
 #sesion{
@@ -57,6 +58,7 @@ form input[type="text"], input[type="password"]{
     border: 1px solid white;
     width: 80%;
     padding: 10px;
+    border-radius: 5px;
 }
 
 form label{
@@ -97,6 +99,7 @@ form button:hover{
 .error_div{
     color: rgb(161, 65, 65);
     display: flex;
+    font-weight: 600;
 }
 
 .btn_form{

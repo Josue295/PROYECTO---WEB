@@ -47,6 +47,7 @@ productos.forEach((product)=>{
         
         <div class="card-txt">
             <h4 class="prod_nombre">${product.nombre}</h4>
+            <p class="prod_marca">${product.marca}</p>
             <p class="prod_precio">$${product.precio}</p>
             <p class="id_producto">ID: ${product.id}</p>
         </div>
@@ -63,9 +64,10 @@ console.log(aux);
 let id_cont = aux.length;
     
 class Producto {
-    constructor(id, nombre, precio, cantidad, img) {
+    constructor(id, nombre, marca, precio, cantidad, img) {
     this.id = id
     this.nombre = nombre;
+    this.marca = marca;
     this.precio = precio;
     this.cantidad = cantidad;
     this.img = img;
@@ -76,11 +78,12 @@ class Producto {
 const AddProducto = () => {
     id_cont++
     let nombre = document.getElementById("name_prod").value;
+    let marca = document.getElementById("marca_prod").value;
     let precio = parseInt(document.getElementById("price_prod").value);
     let cantidad = 1;
     let id = id_cont;
     let img = document.getElementById("file_prod").value;
-    let productoNuevo = new Producto(id, nombre, precio, cantidad, img);
+    let productoNuevo = new Producto(id, nombre, marca, precio, cantidad, img);
     productos.unshift(productoNuevo);
     Swal.fire({
         position: 'top-center',
@@ -93,6 +96,7 @@ const AddProducto = () => {
     // guarda el producto en el localStorage
     localStorage.setItem("productos", JSON.stringify(productos));
     console.log(productos)
+    window.location.href("#")
     return productoNuevo;
 
 }

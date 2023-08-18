@@ -1,5 +1,6 @@
 const footer = document.getElementById("footer");
-const contenido = document.getElementById("shop_content")
+const contenido = document.getElementById("shop_content");
+const titulo = document.getElementById("div_title_shop");
 
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -9,11 +10,12 @@ const ponerCarrito = () => {
     modalContainer.style.display = "flex"
     footer.style.opacity = "0.2"
     contenido.style.opacity = "0.2"
+    titulo.style.opacity = "0.2"
 
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header"
     modalHeader.innerHTML = `
-        <h1 class="modal-header-title">Carrito</h1> 
+        <h1 class="modal-header-title"><i class='bx bx-shopping-bag' id="icon"></i></h1> 
     `;
     modalContainer.append(modalHeader);
 
@@ -25,6 +27,7 @@ const ponerCarrito = () => {
         modalContainer.style.display = "none"
         footer.style.opacity = "1"
         contenido.style.opacity = "100"
+        titulo.style.opacity = "100"
     })
 
     modalHeader.append(modalBtn)
