@@ -614,6 +614,8 @@ footer{
     height: 250px;
     width: 250px;
     cursor: pointer;
+    border-radius: 3%;
+
 }
 
 .episode:hover{
