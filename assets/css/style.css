@@ -614,10 +614,12 @@ footer{
     height: 250px;
     width: 250px;
     cursor: pointer;
+    border-radius: 3%;
 }
 
 .episode:hover{
-    opacity: 0.7;
+    opacity: 0.5;
+    transition: 300ms;
 }
 
 
