@@ -583,20 +583,47 @@ footer{
 }
 
 .title-rank{
-    
+    font-size: 80px;
     font-family: 'Quicksand', sans-serif;
-    color: rgb(133, 133, 133);
+    font-size: 60px;
+    opacity: 0.4;
+    color: #9b9b9b;
     margin-top: 10px;
+    font-weight: 600;
+    transition-property: opacity; 
+    transition-duration: 1000ms;
+    
 }
+.title-rank:hover{
+    opacity: 0.9;
+    cursor: default;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  
+#underline {
+    -webkit-transition: background-size .1s ease-out;
+    transition: background-size 0.8s ease-out;
+    background: linear-gradient(270deg,#91eae4,#86a8e7,#7f7fd5) no-repeat center 100%/0 3%
+}
+  
+#underline:hover {
+    background-size: 100% 3%;
+}
+  
 
 .artist{
     font-weight: 600;
 }
 
 .logo-spotify{
-    height: 70px;
-    width: 70px;
-    margin-left: 40px;
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
     margin-right: 40px
 }
 
@@ -619,7 +646,7 @@ footer{
 
 .episode:hover{
     opacity: 0.5;
-    transition: 300ms;
+    transition: 600ms;
 }
 
 
@@ -643,4 +670,24 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.actualizar{
+    height: 100px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.update{
+    background-color: rgba(173, 47, 47, 0);
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}
+
+.update:hover{
+    opacity: 0.5;
 }

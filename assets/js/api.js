@@ -2,6 +2,18 @@ const topartist=document.getElementById("top-billboard")
 const topSongs = document.getElementById("top-songs")
 const section = document.getElementById("section")
 
+let songs = JSON.parse(localStorage.getItem("song"))|| [];
+localStorage.setItem("song", JSON.stringify(songs))
+
+class Song {
+    constructor(spotifyID, imgSong, rank, nameSong, songArtist) {
+    this.spotifyID = spotifyID;
+    this.imgSong = imgSong;
+    this.rank = rank;
+    this.nameSong = nameSong;
+    this.songArtist = songArtist;
+    }
+}
   
 
 async function obtenerDatos(){
@@ -20,9 +32,8 @@ async function obtenerDatos(){
     
 
 
-    let i = 1;
     let s = 1;
-    try {
+    /* try {
     const response = await fetch(url_artist, options);
     const result = await response.json();
     console.log(result);
@@ -41,7 +52,7 @@ async function obtenerDatos(){
     
     } catch (error) {
     console.log(error);
-    }
+    } */
 
     try {
         const response = await fetch(url_song, options);
@@ -49,43 +60,53 @@ async function obtenerDatos(){
         console.log(result)
         
             result.forEach((post) => {
-                if(s<=10){
-                topSongs.innerHTML += `
-                <div class="song-rank">
-                <a class="episode" data-spotify-id="spotify:track:5Y8F5o4lzoYFOWOPVbI5mg">                 
-                    <img class"portada" src="${post.trackMetadata.displayImageUri}"></p>
-                </a>  
-                    <h3 class="rank">Ranking: ${post.chartEntryData.currentRank}</h3>    
-                    <h1 class="song">${post.trackMetadata.trackName}</h1>
-                    <h3 class="song-artist">${post.trackMetadata.artists[0].name}</h3
-                </div>
-                `;
+                if(s<=100){
+
+                    let spotifyID = post.trackMetadata.trackUri;
+                    let imgSong = post.trackMetadata.displayImageUri;
+                    let rank = post.chartEntryData.currentRank;
+                    let nameSong = post.trackMetadata.trackName;
+                    let songArtist = post.trackMetadata.artists[0].name;
+                    
+                    let songNew = new Song(spotifyID, imgSong, rank, nameSong, songArtist)
+
+                    songs.push(songNew);
+                    localStorage.setItem("song", JSON.stringify(songs));
+                
                         
             }s++;
+            console.log(songs)
+            
             });
         
         } catch (error) {
         console.log(error);
         }
     
-}
-/* obtenerDatos(); */
+};
 
 function crearSongs (){
 
+    let i = 0;
+
+    songs.forEach((cancion) => {
+    if(i<50){
     topSongs.innerHTML +=`
     
     <div class="song-rank">
-    <a href="#reproductor" class="episode" data-spotify-id="spotify:track:4LRPiXqCikLlN15c3yImP7">
-        <img class="portada" src="https://i.scdn.co/image/ab67616d00001e02b46f74097655d7f353caab14">
+    <a href="#reproductor" class="episode" data-spotify-id="${cancion.spotifyID}">
+        <img class="portada" src="${cancion.imgSong}">
         <p></p>
       </a>
-      <p class="rank">Ranking: 1</p>
-      <h1 class="song">As It Was</h1>
-      <h3 class="song-artist">Harry Styles</h3>
+      <p class="rank">Ranking: ${cancion.rank}</p>
+      <h1 class="song">${cancion.nameSong}</h1>
+      <h3 class="song-artist">${cancion.songArtist}</h3>
     </div>
+    `
+    }i++
+    })
 
-    <div class="song-rank">
+    /* <div class="song-rank">
     <a href="#reproductor" class="episode" data-spotify-id="spotify:track:0yLdNVWF3Srea0uzk55zFn">
         <img class="portada" src="https://i.scdn.co/image/ab67616d00001e02f429549123dbe8552764ba1d">
         <p></p>
@@ -154,7 +175,7 @@ function crearSongs (){
         <h1 class="song">If the World Was Ending</h1>
         <h3 class="song-artist">JP Saxe</h3>
     </div>
-      `
+      ` */
 }
-
+/* obtenerDatos(); */
 crearSongs();

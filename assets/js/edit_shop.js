@@ -72,7 +72,7 @@ class Producto {
     this.cantidad = cantidad;
     this.img = img;
     }
-      }
+}
 
 
 const AddProducto = () => {
