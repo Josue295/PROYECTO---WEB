@@ -1,3 +1,5 @@
+
+
 const topartist=document.getElementById("top-billboard")
 const topSongs = document.getElementById("top-songs")
 const section = document.getElementById("section")
@@ -187,6 +189,7 @@ function crearSongs (){
 btn_update.addEventListener(("click"), () => {
 
     const firstime = Date.now();
+    
     let timeLocal = JSON.parse(localStorage.getItem("FirstTime"))
     if(timeLocal == null){
         console.log("Guarda por primera vez")
@@ -207,10 +210,8 @@ const verifTime = () =>{
         localStorage.setItem("FirstTime", timeNow)
         console.log("Apto para actualizar")
         obtenerDatos();
-        location.reload();
     }else{
         console.log("No apto")
-        body.style.opacity = "0"
         const Toast = Swal.mixin({
             background: 'rgb(32, 32, 32)',
             color: 'white',
@@ -228,7 +229,7 @@ const verifTime = () =>{
           
           Toast.fire({
             icon: 'success',
-            title: '¡Acceso exitoso!'
+            title: 'Ranking Actualizado'
           })
     }
 }

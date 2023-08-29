@@ -6,6 +6,8 @@ a:link, a:visited,  a:hover, a:active
 
 body{
     opacity: 1;
+    backdrop-filter: blur(8px);
+
 }
 
 #title{
@@ -692,5 +694,4 @@ footer{
 
 .update:hover{
     opacity: 0.5;
-    color: rgb(32, 32, 32)
 }
