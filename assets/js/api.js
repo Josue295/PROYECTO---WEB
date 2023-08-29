@@ -216,7 +216,7 @@ const verifTime = () =>{
             background: 'rgb(32, 32, 32)',
             color: 'white',
             toast: true,
-            position: 'center',
+            position: 'bottom',
             width: '800px',
             showConfirmButton: false,
             timer: 4000,
