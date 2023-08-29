@@ -29,7 +29,7 @@ async function obtenerDatos(){
     const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': API_KEY,
+        'X-RapidAPI-Key': 'ca9ec6ea20mshdf1efa1038c649ap1cb8abjsn724afbfeb208',
         'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
     }
     };
