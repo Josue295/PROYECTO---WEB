@@ -1,4 +1,4 @@
-import ApiKey from "../js/keys.json" assert { type: "json" };
+import API_KEY from "./keys.js" ;
 
 const topartist=document.getElementById("top-billboard")
 const topSongs = document.getElementById("top-songs")
@@ -29,7 +29,7 @@ async function obtenerDatos(){
     const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': ApiKey.ApiKey,
+        'X-RapidAPI-Key': API_KEY,
         'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
     }
     };
