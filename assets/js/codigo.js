@@ -1,5 +1,6 @@
+let estadoUsuario = localStorage.getItem("statusUser")
 
-localStorage.setItem("statusUser", false);
+localStorage.setItem("statusUser", estadoUsuario);
 
 const NavEl = document.querySelector('.nav');
 

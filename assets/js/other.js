@@ -1,4 +1,5 @@
 const Nav = document.getElementById('nav');
+const actualizar = document.getElementById("actualizar")
 
 window = addEventListener('scroll', () => {
 
@@ -11,3 +12,6 @@ window = addEventListener('scroll', () => {
     }
 
 } )
+
+
+let userStatus = localStorage.getItem("statusUser")

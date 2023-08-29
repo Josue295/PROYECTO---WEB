@@ -2,6 +2,10 @@ const topartist=document.getElementById("top-billboard")
 const topSongs = document.getElementById("top-songs")
 const section = document.getElementById("section")
 
+const body = document.getElementById("ranking-spotify")
+
+let btn_update = document.getElementById("btnUpdate")
+
 let songs = JSON.parse(localStorage.getItem("song"))|| [];
 localStorage.setItem("song", JSON.stringify(songs))
 
@@ -23,7 +27,7 @@ async function obtenerDatos(){
     const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '',
+        'X-RapidAPI-Key': 'ca9ec6ea20mshdf1efa1038c649ap1cb8abjsn724afbfeb208',
         'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
     }
     };
@@ -90,7 +94,7 @@ function crearSongs (){
     let i = 0;
 
     songs.forEach((cancion) => {
-    if(i<50){
+    if(i<20){
     topSongs.innerHTML +=`
     
     <div class="song-rank">
@@ -176,6 +180,57 @@ function crearSongs (){
         <h3 class="song-artist">JP Saxe</h3>
     </div>
       ` */
+
+      
 }
-/* obtenerDatos(); */
+
+btn_update.addEventListener(("click"), () => {
+
+    const firstime = Date.now();
+    let timeLocal = JSON.parse(localStorage.getItem("FirstTime"))
+    if(timeLocal == null){
+        console.log("Guarda por primera vez")
+        localStorage.setItem("FirstTime", firstime)
+        obtenerDatos();
+    }else{
+        verifTime();
+    }
+
+});
+
+const verifTime = () =>{
+    const timeNow = Date.now();
+    let TimeFirst = JSON.parse(localStorage.getItem("FirstTime"))
+    TimeFirst += 604800000
+
+    if(timeNow > TimeFirst){    
+        localStorage.setItem("FirstTime", timeNow)
+        console.log("Apto para actualizar")
+        obtenerDatos();
+        location.reload();
+    }else{
+        console.log("No apto")
+        body.style.opacity = "0"
+        const Toast = Swal.mixin({
+            background: 'rgb(32, 32, 32)',
+            color: 'white',
+            toast: true,
+            position: 'center',
+            width: '800px',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+            })
+          
+          Toast.fire({
+            icon: 'success',
+            title: '¡Acceso exitoso!'
+          })
+    }
+}
+
 crearSongs();

@@ -4,7 +4,9 @@ a:link, a:visited,  a:hover, a:active
     text-decoration: none;
 }
 
-
+body{
+    opacity: 1;
+}
 
 #title{
     font-family: 'Quicksand', sans-serif;
@@ -690,4 +692,5 @@ footer{
 
 .update:hover{
     opacity: 0.5;
+    color: rgb(32, 32, 32)
 }
