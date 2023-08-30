@@ -1,7 +1,6 @@
 /* import API_KEY from "./keys.js" ; */
 
-const apiKey = process.env.API_KEY;
-console.log(apiKey);
+
 
 const topartist=document.getElementById("top-billboard")
 const topSongs = document.getElementById("top-songs")
@@ -24,15 +23,107 @@ class Song {
     }
 }
   
+  
+  
+async function fetchEnvironmentVariable() {
+    const token = 'wSfFmMxrgMAY13XJcWqFtws8Ti6mU1t4zPlc1iQpXC4';
+    const account_id = 'josue295';
+    const variable_key = 'API_KEY';
+  
+    try {
+      const response = await fetch(`https://api.netlify.com/api/v1/accounts/${account_id}/env/${variable_key}?site_id=a306f3d8-b241-4e0f-b4d8-1d904a7a3bd2`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error('Error al obtener la variable de entorno');
+      }
+  
+      const data = await response.json();
+      async function obtenerDatos(){
+    
+    
+        const url_artist = 'https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners';
+        const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': data.values[0].value,
+            'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
+        }
+        };
+    
+        const url_song = 'https://spotify81.p.rapidapi.com/top_200_tracks?country=GLOBAL';
+        
+    
+    
+        let s = 1;
+        /* try {
+        const response = await fetch(url_artist, options);
+        const result = await response.json();
+        console.log(result);
+        
+            result.forEach((post) => {
+                if(i<=10){
+                topartist.innerHTML += `
+                <div class="position-rank">                       
+                    <h1 class="artist">${post.artist}</h1>
+                    <h3 class="rank">Ranking: ${post.rank}</h3>  
+                    <p class"listeners">Oyentes mensuales: ${post.monthlyListeners}</p>
+                </div>
+                `;
+            }i++;
+            });
+        
+        } catch (error) {
+        console.log(error);
+        } */
+    
+        try {
+            const response = await fetch(url_song, options);
+            const result = await response.json();
+            console.log(result)
+            
+                result.forEach((post) => {
+                    if(s<=100){
+    
+                        let spotifyID = post.trackMetadata.trackUri;
+                        let imgSong = post.trackMetadata.displayImageUri;
+                        let rank = post.chartEntryData.currentRank;
+                        let nameSong = post.trackMetadata.trackName;
+                        let songArtist = post.trackMetadata.artists[0].name;
+                        
+                        let songNew = new Song(spotifyID, imgSong, rank, nameSong, songArtist)
+    
+                        songs.push(songNew);
+                        localStorage.setItem("song", JSON.stringify(songs));
+                    
+                            
+                }s++;
+                
+                });
+            
+            } catch (error) {
+            console.log(error);
+            }
+        
+    };
+    obtenerDatos();
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+  
 
-async function obtenerDatos(){
+/* async function obtenerDatos(){
     
     
     const url_artist = 'https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners';
     const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': apiKey,
+        'X-RapidAPI-Key': '',
         'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
     }
     };
@@ -42,7 +133,7 @@ async function obtenerDatos(){
 
 
     let s = 1;
-    /* try {
+    try {
     const response = await fetch(url_artist, options);
     const result = await response.json();
     console.log(result);
@@ -61,7 +152,7 @@ async function obtenerDatos(){
     
     } catch (error) {
     console.log(error);
-    } */
+    }
 
     try {
         const response = await fetch(url_song, options);
@@ -91,7 +182,7 @@ async function obtenerDatos(){
         console.log(error);
         }
     
-};
+}; */
 
 function crearSongs (){
 
@@ -127,7 +218,7 @@ btn_update.addEventListener(("click"), () => {
     if(timeLocal == null){
         console.log("Guarda por primera vez")
         localStorage.setItem("FirstTime", firstime)
-        obtenerDatos();
+        fetchEnvironmentVariable();
     }else{
         verifTime();
     }
@@ -142,7 +233,7 @@ const verifTime = () =>{
     if(timeNow > TimeFirst){    
         localStorage.setItem("FirstTime", timeNow)
         console.log("Apto para actualizar")
-        obtenerDatos();
+        fetchEnvironmentVariable();
     }else{
         console.log("No apto")
         const Toast = Swal.mixin({
@@ -168,3 +259,4 @@ const verifTime = () =>{
 }
 
 crearSongs();
+
