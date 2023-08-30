@@ -4,11 +4,6 @@ a:link, a:visited,  a:hover, a:active
     text-decoration: none;
 }
 
-body{
-    opacity: 1;
-    backdrop-filter: blur(8px);
-
-}
 
 #title{
     font-family: 'Quicksand', sans-serif;
